@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apica-react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apica-react-app
+  template:
+    metadata:
+      labels:
+        app: apica-react-app
+    spec:
+      containers:
+      - name: apica-react-app-container
+        image: akshaykumart/apica-react-app:latest                  # Docker Hub image
+        ports:
+        - containerPort: 3000
+
